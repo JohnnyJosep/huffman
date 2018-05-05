@@ -7,6 +7,36 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Name="File"></TextBox>
+                <Button Grid.Column="1" Click="Buscar_Click">Buscar</Button>
+                <Button Name="Comprimir" Grid.Column="2" IsEnabled="False" Click="Comprimir_Click">Comprimir</Button>
+            </Grid>
+
+            <TextBlock Grid.Row="1">
+                <Run>Original: </Run>
+                <Run Name="Original"></Run>
+                <Run>Huffman: </Run>
+                <Run Name="Huffman"></Run>
+                <Run>Percent: </Run>
+                <Run Name="Percent"></Run>
+            </TextBlock>
+            
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalAlignment="Top" Grid.Row="2">
+                <TextBlock Name="Code" ></TextBlock>
+            </ScrollViewer>
+
+        </Grid>
     </Grid>
 </Window>
